@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model GerilimHesabi
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+                <table>
+                    <tr>
+                        <td style="color:darkblue;font-size:20px;"> Akım (I) Değerini Giriniz : </td>
+                        <td>@Html.EditorFor(akim => akim.Akim)</td>
+                    </tr>
+                    <tr>
+                        <td style="color:darkblue;font-size:20px;"> Direnç(R) Değerini Giriniz : </td>
+                        <td>@Html.EditorFor(direnc => direnc.Direnc)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Gerilim(V) Değerini Hesapla" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@ViewBag.Message</td>
+                    </tr>
+                </table>
+        }
+    </div>
+</body>
+</html>
